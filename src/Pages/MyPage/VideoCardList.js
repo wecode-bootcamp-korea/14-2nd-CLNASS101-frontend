@@ -5,7 +5,11 @@ import { withRouter } from 'react-router-dom';
 
 class VideoCardList extends Component {
   goToClassPage = () => {
+<<<<<<< HEAD
     this.props.history.push('/ClassLists');
+=======
+    this.props.history.push('/ClassDetail');
+>>>>>>> c809a03 (ADD: 마이페이지 레이아웃)
   };
 
   render() {
@@ -36,10 +40,14 @@ class VideoCardList extends Component {
               </div>
               <div className='title'>{item.title}</div>
               <div className='progressBox'>
+<<<<<<< HEAD
                 <div className='progress'>
                   10% 수강중
                   <span>89일 남음</span>
                 </div>
+=======
+                <div className='progress'>10% 수강중</div>
+>>>>>>> c809a03 (ADD: 마이페이지 레이아웃)
                 <div className='barContainer'>
                   <progress className='progressTag' value='10' max='100' />
                 </div>
@@ -86,6 +94,7 @@ const VideoCard = styled.div`
   }
   .progressBox {
     .progress {
+<<<<<<< HEAD
       display: flex;
       justify-content: space-between;
       font-size: 11px;
@@ -94,6 +103,11 @@ const VideoCard = styled.div`
       span {
         color: #A8AEB2;
       }
+=======
+      font-size: 11px;
+      color: #fd7e13;
+      margin: 5px 0 5px 0;
+>>>>>>> c809a03 (ADD: 마이페이지 레이아웃)
     }
 
     .barContainer {
@@ -106,11 +120,19 @@ const VideoCard = styled.div`
         width: 100%;
         margin: 0px;
         padding: 0px;
+<<<<<<< HEAD
       }
         /* .css-progressbar {
           -moz-animation: css-progressbar 2s ease-out;
           -webkit-animation: css-progressbar 2s ease-out;
         } */
+=======
+
+        .css-progressbar {
+          width: 30%;
+          -moz-animation: css-progressbar 2s ease-out;
+          -webkit-animation: css-progressbar 2s ease-out;
+>>>>>>> c809a03 (ADD: 마이페이지 레이아웃)
         }
       }
     }
