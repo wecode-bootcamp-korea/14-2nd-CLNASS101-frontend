@@ -1,0 +1,19 @@
+{
+  "classdata": [
+    {
+      "id": 1,
+      "title": "낭만적인 캠핑을 위한 아메리칸 바비큐 레시피",
+      "url": "https://images.unsplash.com/photo-1557800636-894a64c1696f?ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80"
+    },
+    {
+      "id": 2,
+      "title": "연필 하나만으로 모든 분위기를 담아내요, 둡의 연필 드로잉",
+      "url": "https://www.youtube.com/embed/CCXLFhIp6Uo"
+    },
+    {
+      "id": 3,
+      "title": "스마트스토어로 월 100만원 만들기, 평범한 사람이 돈을 만드는 비법",
+      "url": "https://images.unsplash.com/photo-1528825871115-3581a5387919?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=658&q=80"
+    }
+  ]
+}

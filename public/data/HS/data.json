@@ -1,3 +1,44 @@
 {
-  "data" : 1
+  "classdata": [
+    {
+      "id": 1,
+      "user_name": "",
+      "user_email": "",
+      "title": "낭만적인 캠핑을 위한 아메리칸 바비큐 레시피",
+      "url": "",
+      "profile_image": "",
+      "progress_status": "",
+      "thumbnail": "https://cdn.class101.net/images/25b73a82-9387-44b9-86bd-fe312461e139/750xauto.webp"
+    },
+    {
+      "id": 2,
+      "user_name": "",
+      "user_email": "",
+      "title": "연필 하나만으로 모든 분위기를 담아내요, 둡의 연필 드로잉",
+      "url": "",
+      "profile_image": "",
+      "progress_status": "",
+      "thumbnail": "https://cdn.class101.net/images/25b73a82-9387-44b9-86bd-fe312461e139/750xauto.webp"
+    },
+    {
+      "id": 3,
+      "user_name": "",
+      "user_email": "",
+      "title": "스마트스토어로 월 100만원 만들기, 평범한 사람이 돈을 만드는 비법",
+      "url": "https://www.youtube.com/embed/MXHn5E3fqEg",
+      "profile_image": "",
+      "progress_status": "",
+      "thumbnail": "https://cdn.class101.net/images/25b73a82-9387-44b9-86bd-fe312461e139/750xauto.webp"
+    },
+    {
+      "id": 3,
+      "user_name": "",
+      "user_email": "",
+      "title": "스마트스토어로 월 100만원 만들기, 평범한 사람이 돈을 만드는 비법",
+      "url": "https://www.youtube.com/embed/BaEmS3SFFPQ",
+      "profile_image": "",
+      "progress_status": "",
+      "thumbnail": "https://cdn.class101.net/images/25b73a82-9387-44b9-86bd-fe312461e139/750xauto.webp"
+    }
+  ]
 }
