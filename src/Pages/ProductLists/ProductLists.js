@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component, useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import { API_List } from "../../config";
@@ -7,6 +8,9 @@ import Lists from "./Components/Lists";
 import ListsAll from "./Components/ListsAll";
 import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
+=======
+import React, { Component } from "react";
+>>>>>>> f75d934... [ADD] 멘토님 리뷰 반영
 
 const ProductLists = () => {
   const [list, setList] = useState([]);
