@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { css } from 'styled-components';
-import { withRouter } from 'react-router-dom';
+import React, { Component } from "react";
+import styled from "styled-components";
+import { css } from "styled-components";
+import { withRouter } from "react-router-dom";
 
 class VideoCardList extends Component {
   goToClassPage = (item) => {
@@ -17,23 +17,23 @@ class VideoCardList extends Component {
         <VideoContainer>
           {myProduct?.map((item, index) => (
             <VideoCard key={index}>
-              <div className='videoBox'>
-                <img src={item.thumbnail} alt='섬네일' />
+              <div className="videoBox">
+                <img src={item.thumbnail} alt="섬네일" />
                 <img
-                  className='playButton'
-                  src='/images/HS/playbutton.png'
-                  alt='playbutton'
+                  className="playButton"
+                  src="/images/HS/playbutton.png"
+                  alt="playbutton"
                   onClick={() => this.goToClassPage(item)}
                 />
               </div>
-              <div className='title'>{item.title}</div>
-              <div className='progressBox'>
-                <div className='progress'>
+              <div className="title">{item.title}</div>
+              <div className="progressBox">
+                <div className="progress">
                   20% 수강중
                   <span>{item.effectiveDate}</span>
                 </div>
-                <div className='barContainer'>
-                  <progress className='progressTag' value='20' max='100' />
+                <div className="barContainer">
+                  <progress className="progressTag" value="20" max="100" />
                 </div>
               </div>
             </VideoCard>
