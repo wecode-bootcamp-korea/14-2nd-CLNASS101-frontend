@@ -1,0 +1,9 @@
+{
+  "lectures": [
+    {
+      "lecture_id": 55,
+      "contents": [{ "description": "아무말" }, { "description": "블라블라" }]
+    },
+    { "lecutre_id": 56, "contents": [{ "description": "ffff" }] }
+  ]
+}
