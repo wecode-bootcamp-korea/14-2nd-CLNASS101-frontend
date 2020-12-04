@@ -1,0 +1,21 @@
+{
+  "result": {
+    "chapter": [
+      {
+        "chpter_id": 0,
+        "chapter_number": "",
+        "chapter_title": "",
+        "lecture": [
+          { "lecture_id": 0, "lecture_title": "" },
+          { "lecture_id": 0, "lecture_title": "" }
+        ]
+      },
+      {
+        "chpter_id": 1,
+        "chapter_number": "",
+        "chapter_title": "",
+        "lecture": [{ "lecture_id": 0, "lecture_title": "" }]
+      }
+    ]
+  }
+}
