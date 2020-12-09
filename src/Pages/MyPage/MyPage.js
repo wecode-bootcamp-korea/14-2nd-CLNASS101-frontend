@@ -11,7 +11,7 @@ class MyPage extends Component {
   constructor() {
     super();
     this.state = {
-      mypage: [],
+      mypage: {},
     };
   }
 
