@@ -8,19 +8,20 @@ class RightSideList extends Component {
   };
 
   render() {
+    console.log(this.props.curriculum.lectures[0].lecture_title);
     const { curriculum } = this.props;
-    console.log('isplayed:', curriculum.isplayed);
+    // console.log('isplayed:', curriculum.isplayed);
     return (
       <div className='chapterContainer'>
         <div className='chapter'>
-          <div className='chapterID'>{curriculum.lecture_number}</div>
-          <div className='chapterTitle'>{curriculum.lecture_title}</div>
+          <div className='chapterID'>{curriculum.chapter_number}</div>
+          <div className='chapterTitle'>{curriculum.chapter_title}</div>
         </div>
         <div className='videoDetail'>
           <div
             className='detail'
             onClick={() => this.goToDetail(curriculum.id)}>
-            {curriculum.lecture_detail}
+            {curriculum.lectures[0].lecture_title}
           </div>
           <div className='detailBox'>
             <div className='time'>
