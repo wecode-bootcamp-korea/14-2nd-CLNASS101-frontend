@@ -35,7 +35,7 @@ const LectureBox = (props) => {
   };
 
   const addExplanationBox = () => {
-    const getExplanationBox = [...props.giveLecture.content];
+    const getExplanationBox = [...explanationBox];
     setExplanationBox(getExplanationBox.concat({}));
   };
 
