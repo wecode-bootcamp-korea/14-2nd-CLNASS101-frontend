@@ -41,6 +41,9 @@ const Creator = () => {
       }
       formData.append('files', files);
       fetch('http://192.168.200.125:8000/creator/1/first', {
+        headers: {
+          authorization: localStorage.getItem('token'),
+        },
         method: 'POST',
         body: formData,
       })
@@ -59,6 +62,9 @@ const Creator = () => {
         formData.append('videos', lectureVideo[j]);
       }
       fetch('http://192.168.200.125:8000/creator/1/third', {
+        headers: {
+          authorization: localStorage.getItem('token'),
+        },
         method: 'POST',
         body: formData,
       })
@@ -81,6 +87,9 @@ const Creator = () => {
         console.log(key);
       }
       fetch('http://192.168.200.125:8000/creator/1/fourth', {
+        headers: {
+          authorization: localStorage.getItem('token'),
+        },
         method: 'POST',
         body: formData,
       })
@@ -99,6 +108,9 @@ const Creator = () => {
       formData.append('files', lecturefiles[i]);
     }
     fetch('http://192.168.200.125:8000/creator/1/second', {
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
       method: 'POST',
       body: formData,
     })
@@ -110,6 +122,9 @@ const Creator = () => {
 
   const complete = () => {
     fetch('http://192.168.200.125:8000/creator/1/create', {
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
       method: 'POST',
       body: { user_id: 1 },
     })
