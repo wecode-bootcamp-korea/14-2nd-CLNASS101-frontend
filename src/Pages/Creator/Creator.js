@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import Introduce from './Introduce/Introduce';
 import Lecture from './Lecture/Lecture';
@@ -21,8 +21,9 @@ const Creator = () => {
   const [makeLecture, setMakeLecture] = useState([]);
   const [lectureImage, setLectureImage] = useState([]);
   const [lectureVideo, setLectureVideo] = useState([]);
+  const [kitnames, setKitnames] = useState([]);
+  const [kitImage, setKitImage] = useState([]);
 
-  console.log(makeLecture);
   const postTemporaryInfomation = () => {
     if (selectedPage === 0) {
       const temp = JSON.stringify({
@@ -47,35 +48,14 @@ const Creator = () => {
         .then((result) => {
           console.log(result);
         });
-    } else if (selectedPage === 1) {
-      const temp = JSON.stringify(selectedLecture);
-      let formData = new FormData();
-      formData.append('body', temp);
-      for (let i = 0; i < lecturefiles.length; i++) {
-        formData.append('files', lecturefiles[i]);
-      }
-      // for (var key of formData2.keys()) {
-      //   console.log(key);
-      // }
-      // for (var value of formData2.values()) {
-      //   console.log(value);
-      // }
-      fetch('http://192.168.200.125:8000/creator/1/second', {
-        method: 'POST',
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((result) => {
-          console.log(result);
-        });
     } else if (selectedPage === 2) {
       const temp = JSON.stringify(makeLecture);
       let formData = new FormData();
       formData.append('body', temp);
-      for (let i = 0; i < lecturefiles.length; i++) {
-        formData.append('images', lecturefiles[i]);
+      for (let i = 0; i < lectureImage.length; i++) {
+        formData.append('images', lectureImage[i]);
       }
-      for (let j = 0; j < lecturefiles.length; j++) {
+      for (let j = 0; j < lectureVideo.length; j++) {
         formData.append('videos', lectureVideo[j]);
       }
       fetch('http://192.168.200.125:8000/creator/1/third', {
@@ -86,7 +66,57 @@ const Creator = () => {
         .then((result) => {
           console.log(result);
         });
+    } else if (selectedPage === 3) {
+      const temp = JSON.stringify(kitnames);
+      let formData = new FormData();
+      formData.append('body', temp);
+      for (let k = 0; k < kitImage.length; k++) {
+        formData.append('files', kitImage[k]);
+      }
+      for (var value of formData.values()) {
+        console.log(value);
+      }
+
+      for (var key of formData.keys()) {
+        console.log(key);
+      }
+      fetch('http://192.168.200.125:8000/creator/1/fourth', {
+        method: 'POST',
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          console.log(result);
+        });
     }
+  };
+
+  const temporary = () => {
+    const temp = JSON.stringify(selectedLecture);
+    let formData = new FormData();
+    formData.append('body', temp);
+    for (let i = 0; i < lecturefiles.length; i++) {
+      formData.append('files', lecturefiles[i]);
+    }
+    fetch('http://192.168.200.125:8000/creator/1/second', {
+      method: 'POST',
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      });
+  };
+
+  const complete = () => {
+    fetch('http://192.168.200.125:8000/creator/1/create', {
+      method: 'POST',
+      body: { user_id: 1 },
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      });
   };
 
   return (
@@ -159,10 +189,20 @@ const Creator = () => {
                   takeVideos={(videos) => setLectureVideo(videos)}
                 />
               ) : null}
-              {selectedPage === 3 ? <Kit /> : null}
+              {selectedPage === 3 ? (
+                <Kit
+                  takeKitImage={(images) => setKitImage(images)}
+                  takeKitName={(names) => setKitnames(names)}
+                />
+              ) : null}
               {selectedPage === 4 ? <Confirmation /> : null}
               <Footer>
                 <ButtonBox>
+                  <TempButton
+                    changeColor={selectedPage}
+                    onClick={(e) => temporary(e)}>
+                    임시저장
+                  </TempButton>
                   <PrevButton onClick={() => setSelectedPage(selectedPage - 1)}>
                     이전
                   </PrevButton>
@@ -173,7 +213,11 @@ const Creator = () => {
                     }}>
                     다음
                   </NextButton>
-                  <MakeButton>만들기</MakeButton>
+                  <MakeButton
+                    changeColor={selectedPage}
+                    onClick={(e) => complete(e)}>
+                    만들기
+                  </MakeButton>
                 </ButtonBox>
               </Footer>
             </Section>
@@ -589,25 +633,34 @@ const ButtonBox = styled.div`
   margin: 30px;
 `;
 
-const MakeButton = styled.button`
+const NextButton = styled.button`
   ${FlexCenter};
   width: 55px;
   height: 42px;
   margin-right: 10px;
-  color: rgb(200, 200, 200);
-  background-color: rgb(230, 230, 230);
+  color: white;
+  background-color: #fd7e14;
   border-radius: 4px;
   font-size: 13px;
   outline: none;
   cursor: pointer;
 `;
 
-const NextButton = styled(MakeButton.withComponent('button'))`
-  color: white;
-  background-color: #fd7e14;
+const TempButton = styled(NextButton.withComponent('button'))`
+  color: ${(props) =>
+    props.changeColor === 1 ? 'white' : 'rgb(200, 200, 200)'};
+  background-color: ${(props) =>
+    props.changeColor === 1 ? '#fd4e49' : 'rgb(230, 230, 230)'};
 `;
 
-const PrevButton = styled(MakeButton.withComponent('button'))`
+const MakeButton = styled(NextButton.withComponent('button'))`
+  color: ${(props) =>
+    props.changeColor === 4 ? 'white' : 'rgb(200, 200, 200)'};
+  background-color: ${(props) =>
+    props.changeColor === 4 ? '#fd4e49' : 'rgb(230, 230, 230)'};
+`;
+
+const PrevButton = styled(NextButton.withComponent('button'))`
   color: white;
   background-color: #fd7e14;
 `;

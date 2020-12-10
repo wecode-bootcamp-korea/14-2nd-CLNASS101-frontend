@@ -12,6 +12,7 @@ const MakeLecture = (props) => {
     })
       .then((res) => res.json())
       .then((result) => {
+        console.log(result);
         setResult(result.products);
       });
   }, []);

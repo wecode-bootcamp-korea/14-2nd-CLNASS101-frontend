@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Kit = (props) => {
@@ -9,6 +9,22 @@ const Kit = (props) => {
   const [secondUploadImage, setSecondUploadImage] = useState('');
   const [thirdUploadImage, setThirdUploadImage] = useState('');
   const [files, setFiles] = useState([]);
+
+  useEffect(() => {
+    props.takeKitImage(files);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [files]);
+
+  useEffect(() => {
+    props.takeKitName({
+      kits: [
+        { name: firstInputText },
+        { name: secondInputText },
+        { name: thirdInputText },
+      ],
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [firstInputText, secondInputText, thirdInputText]);
 
   function onFileUpload(event) {
     event.preventDefault();
