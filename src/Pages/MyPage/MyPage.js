@@ -21,7 +21,6 @@ class MyPage extends Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log('fetch', res);
         this.setState({
           mypage: res.mypage,
         });
