@@ -90,7 +90,7 @@ class ClassLists extends Component {
   };
 
   render() {
-    console.log(this.state.lectures);
+    // console.log(this.state.lectures);
     const { curriculums, lecture } = this.state;
     return (
       <>

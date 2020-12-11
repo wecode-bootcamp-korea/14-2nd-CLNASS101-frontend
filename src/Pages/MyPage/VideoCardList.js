@@ -4,10 +4,9 @@ import { css } from 'styled-components';
 import { withRouter } from 'react-router-dom';
 
 class VideoCardList extends Component {
-  goToClassPage = (index) => {
-    this.props.history.push(
-      `/ClassLists/${this.props.mypage.my_class[index].id}`
-    );
+  goToClassPage = (item) => {
+    this.props.history.push(`/ClassLists/${item.classId}`);
+    // console.log(item);
   };
 
   render() {
@@ -24,7 +23,7 @@ class VideoCardList extends Component {
                   className='playButton'
                   src='/images/HS/playbutton.png'
                   alt='playbutton'
-                  onClick={() => this.goToClassPage(index)}
+                  onClick={() => this.goToClassPage(item)}
                 />
               </div>
               <div className='title'>{item.title}</div>
