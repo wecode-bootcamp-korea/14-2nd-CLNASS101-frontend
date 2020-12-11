@@ -8,6 +8,7 @@ import CommentInput from './CommentInput';
 import { IoIosArrowDown } from 'react-icons/io';
 import { BsArrowLeft } from 'react-icons/bs';
 import { BsArrowRight } from 'react-icons/bs';
+import { withRouter } from 'react-router-dom';
 
 class ClassDetail extends Component {
   constructor() {
@@ -16,23 +17,49 @@ class ClassDetail extends Component {
       detaildata: {},
     };
   }
-  componentDidMount() {
+  getData = () => {
     fetch(
-      `http://localhost:3000/data/HS/ClassDetailData${this.props.match.params.id}.json`,
+      `http://192.168.200.130:8001/products/chapters/${this.props.location.state.classId}/lecture/${this.props.match.params.id}`,
       {
         method: 'GET',
+        headers: { Authorization: localStorage.getItem('token') },
       }
     )
       .then((res) => res.json())
       .then((res) => {
-        console.log(res.class_detail);
+        console.log(res);
         this.setState({
-          detaildata: res.class_detail,
+          detaildata: res.LECTURE,
         });
       });
+  };
+
+  componentDidMount() {
+    this.getData();
   }
 
+  componentDidUpdate(prevProps, preState) {
+    if (this.props.match.params.id !== prevProps.match.params.id) {
+      this.getData();
+    }
+  }
+
+  goToPrevious = () => {
+    console.log(this.props);
+    this.props.history.push(
+      `/ClassDetail/${parseInt(this.props.match.params.id) - 1}`
+    );
+  };
+
+  goToNext = () => {
+    this.props.history.push(
+      `/ClassDetail/${parseInt(this.props.match.params.id) + 1}`
+    );
+  };
   render() {
+    // console.log(this.props.match);
+    // console.log(this.props);
+    console.log(this.state.detaildata.lecture_url);
     const { detaildata } = this.state;
     return (
       <div>
@@ -42,7 +69,7 @@ class ClassDetail extends Component {
             <LeftSide>
               <TitleContainer>
                 <div className='titleBox'>
-                  <span className='title'>{detaildata.class_title}</span>
+                  <span className='title'>{detaildata?.class_title}</span>
                 </div>
                 <div className='lecture'>
                   <div className='lectureTitle'>
@@ -53,13 +80,13 @@ class ClassDetail extends Component {
                   </div>
                   <div className='page'>
                     <div>
-                      <div className='previousPage'>
+                      <div className='previousPage' onClick={this.goToPrevious}>
                         <BsArrowLeft />
                         이전 콘텐츠
                       </div>
                     </div>
                     <div>
-                      <div className='nextPage'>
+                      <div className='nextPage' onClick={this.goToNext}>
                         다음 콘텐츠
                         <BsArrowRight />
                       </div>
@@ -98,7 +125,7 @@ class ClassDetail extends Component {
   }
 }
 
-export default ClassDetail;
+export default withRouter(ClassDetail);
 
 const flexCenter = css`
   display: flex;
