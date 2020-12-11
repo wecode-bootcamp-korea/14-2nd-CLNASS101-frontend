@@ -7,7 +7,7 @@ const MakeLecture = (props) => {
   const [makeLecture, setMakeLecture] = useState([]);
 
   useEffect(() => {
-    fetch('http://192.168.200.125:8000/creator/1/third', {
+    fetch('http://192.168.0.6:8000/creator/1/third', {
       headers: {
         authorization: localStorage.getItem('token'),
       },
