@@ -9,11 +9,7 @@ const LectureBox = (props) => {
 
   useEffect(() => {
     const rawLectureBox = {
-<<<<<<< HEAD
       lecture_id: props.giveLecture.lecture_id,
-=======
-      lecture_id: props.giveLecture.lectureId,
->>>>>>> master
       contents: explanationBox,
     };
     props.takeLecture(rawLectureBox);
@@ -25,7 +21,6 @@ const LectureBox = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [explanationImage]);
 
-<<<<<<< HEAD
   const upLoadLectureVideo = (e) => {
     e.preventDefault();
     let reader = new FileReader();
@@ -41,23 +36,6 @@ const LectureBox = (props) => {
 
   const addExplanationBox = () => {
     const getExplanationBox = [...explanationBox];
-=======
-  // const upLoadLectureVideo = (e) => {
-  //   e.preventDefault();
-  //   let reader = new FileReader();
-  //   if (e.target.files[0]) {
-  //     reader.readAsDataURL(e.target.files[0]);
-  //   }
-  //   reader.onloadend = () => {
-  //     const rawImagePath = reader.result;
-  //     const imagePath = rawImagePath.toString();
-  //     setVideoViewer(imagePath);
-  //   };
-  // };
-
-  const addExplanationBox = () => {
-    const getExplanationBox = [...props.giveLecture.content];
->>>>>>> master
     setExplanationBox(getExplanationBox.concat({}));
   };
 
@@ -96,10 +74,7 @@ const LectureBox = (props) => {
             multiple
             onChange={(e) => {
               takeVideo(e);
-<<<<<<< HEAD
               upLoadLectureVideo(e);
-=======
->>>>>>> master
             }}
           />
         </UploadVideoForm>
