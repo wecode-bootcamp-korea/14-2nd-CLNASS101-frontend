@@ -3,38 +3,37 @@ import styled from 'styled-components';
 import { css } from 'styled-components';
 import { withRouter } from 'react-router-dom';
 
-class VideoCardList extends Component {
+class HistoryCardList extends Component {
   goToClassPage = (index) => {
     this.props.history.push(
-      `/ClassLists/${this.props.mypage.my_class[index].id}`
+      `/ClassLists/${this.props.mypage.history_class[index].id}`
     );
   };
 
   render() {
-    const { myProduct } = this.props;
-    // console.log(myProduct, this.props.match.params);
+    const { recentView } = this.props;
+
+    // console.log(recentView);
     return (
       <>
         <VideoContainer>
-          {myProduct?.map((item, index) => (
+          {recentView?.map((item, index) => (
             <VideoCard key={index}>
               <div className='videoBox'>
                 <img src={item.thumbnail} alt='섬네일' />
-                <img
-                  className='playButton'
-                  src='/images/HS/playbutton.png'
-                  alt='playbutton'
-                  onClick={() => this.goToClassPage(index)}
-                />
               </div>
               <div className='title'>{item.title}</div>
-              <div className='progressBox'>
-                <div className='progress'>
-                  20% 수강중
-                  <span>{item.effectiveDate}</span>
+              <div className='priceInfo'>
+                <div className='priceUnderbar'></div>
+                <span className='price'>{item.price}원</span>
+                <span className='discountPer'>{item.sale * 100}% 할인중</span>
+                <div className='totalPrice'>
+                  {/* {parseInt((item.price * (100 - item.sale)) / 100)}원 */}
+                  {item.finalPrice.toLocaleString(2)}원
                 </div>
-                <div className='barContainer'>
-                  <progress className='progressTag' value='20' max='100' />
+                <div className='giveGift'>
+                  <span className='gift'>선물하기</span>
+                  <span className='direct'>바로 수강 가능</span>
                 </div>
               </div>
             </VideoCard>
@@ -80,8 +79,54 @@ const VideoCard = styled.div`
     }
   }
   .title {
-    height: 30px;
+    line-height: 20px;
+    margin-bottom: 7px;
     font-size: 14px;
+  }
+  .priceInfo {
+    position: relative;
+
+    .price {
+      font-size: 11px;
+      line-height: 16px;
+      color: #a8aeb2;
+      margin-right: 5px;
+      /* font-style: ; */
+    }
+    .priceUnderbar {
+      position: absolute;
+      top: 10px;
+      width: 36px;
+      border-bottom: 1px solid #a8aeb2;
+    }
+    .discountPer {
+      color: #f33340;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 16px;
+    }
+    .totalPrice {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 20px;
+    }
+    .gift {
+      background-color: #f7f4f4;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 12px;
+      color: #f33340;
+      padding: 4px;
+      margin-right: 10px;
+    }
+    .direct {
+      background-color: #f7f4f4;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 12px;
+      color: #858a8d;
+      padding: 4px;
+    }
   }
   .progressBox {
     .progress {
@@ -108,7 +153,7 @@ const VideoCard = styled.div`
   }
 `;
 
-export default withRouter(VideoCardList);
+export default withRouter(HistoryCardList);
 
 // "https://img.youtube.com/vi/6vy-wArNJmE/mqdefault.jpg"
 // 유튜브 썸네일 이렇게
