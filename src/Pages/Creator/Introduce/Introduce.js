@@ -329,7 +329,7 @@ const FirstForm = styled.form`
   justify-content: center;
   align-items: center;
   width: 32%;
-  height: 400px;
+  height: 160px;
   overflow: hidden;
   border: 1px solid rgb(200, 200, 200);
   border-radius: 10px;
