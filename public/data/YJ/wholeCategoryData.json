@@ -1,0 +1,84 @@
+{
+  "CreativeContent" : [
+    {
+      "id": 0,
+      "content": "미술"
+    },
+    {
+      "id": 1,
+      "content": "공예"
+    },
+    {
+      "id": 2,
+      "content": "디지털 드로잉"
+    },
+    {
+      "id": 3,
+      "content": "라이프 스타일"
+    },
+    {
+      "id": 4,
+      "content": "사진/영상"
+    },
+    {
+      "id": 5,
+      "content": "요리/음료"
+    },
+    {
+      "id": 6,
+      "content": "음악"
+    },
+    {
+      "id": 7,
+      "content": "운동"
+    }
+  ],
+  "CareerContent" : [
+    {
+      "id": 0,
+      "content": "비즈니스/생산성"
+    },
+    {
+      "id": 1,
+      "content": "영상/디자인"
+    },
+    {
+      "id": 2,
+      "content": "데이터/개발"
+    },
+    {
+      "id": 3,
+      "content": "글쓰기/콘텐츠"
+    },
+    {
+      "id": 4,
+      "content": "어학/외국어"
+    },
+    {
+      "id": 5,
+      "content": "기타"
+    }
+  ],
+  "MoneyContent": [
+    {
+      "id": 0,
+      "content": "부동산/주식/제테크"
+    },
+    {
+      "id": 1,
+      "content": "온라인 쇼핑몰"
+    },
+    {
+      "id": 2,
+      "content": "SNS/콘텐츠"
+    },
+    {
+      "id": 3,
+      "content": "창업"
+    },
+    {
+      "id": 4,
+      "content": "마인드/자기계발"
+    }
+  ]
+}
