@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from "react";
-import styled, { css } from "styled-components";
-import { NavLink } from "react-router-dom";
-import { APISH } from "../../config";
+import React, { useEffect, useState } from 'react';
+import styled, { css } from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import { APISH } from '../../config';
 
 const Nav = () => {
-  const [myProfileURL, setMyProfileURL] = useState("");
-  const [myProfileName, setMyProfileName] = useState("");
+  const [myProfileURL, setMyProfileURL] = useState('');
+  const [myProfileName, setMyProfileName] = useState('');
   const [handleModalSwitch, setHandleModalSwitch] = useState(false);
   const [loginStatueSwitch, setLoginStatueSwitch] = useState(false);
 
   useEffect(() => {
-    fetch(
-      { APISH },
-      {
-        method: "GET",
-      }
-    )
+    fetch(`${APISH}`, {
+      method: 'GET',
+    })
       .then((res) => res.json())
       .then((result) => {
         setMyProfileURL(result.result.url);
@@ -28,54 +25,53 @@ const Nav = () => {
       <NavContainer>
         <NavLeftBox>
           <LogoBox>
-            <img src="/images/SH/logo_text.png" alt="logo" />
+            <img src='/images/SH/logo_text.png' alt='logo' />
           </LogoBox>
           <SerchBox>
-            <input type="text" placeholder="배우고 싶은 것이 있나요?" />
-            <img src="/images/SH/serchIcon.png" alt="SerchIcon" />
+            <input type='text' placeholder='배우고 싶은 것이 있나요?' />
+            <img src='/images/SH/serchIcon.png' alt='SerchIcon' />
           </SerchBox>
         </NavLeftBox>
         {loginStatueSwitch ? (
           <NavRightBox>
             <MenuBox>
-              <NavLink to={"/creator"}>
+              <NavLink to={'/creator'}>
                 <MenuList>크리에이터 센터</MenuList>
               </NavLink>
               <MenuList>주문 및 배송</MenuList>
               <MenuList>내 쿠폰</MenuList>
-              <MenuList color="#ff922b">내 클래스</MenuList>
+              <MenuList color='#ff922b'>내 클래스</MenuList>
             </MenuBox>
             <ProfileBox>
               <ProfileImageBox>
-                <img src={myProfileURL} alt="myProfile" />
+                <img src={myProfileURL} alt='myProfile' />
               </ProfileImageBox>
               <ProfileArrow>
                 <img
-                  src="/images/SH/showIcon.png"
-                  alt="showIcon"
+                  src='/images/SH/showIcon.png'
+                  alt='showIcon'
                   onClick={() => setHandleModalSwitch(!handleModalSwitch)}
                 />
               </ProfileArrow>
               {handleModalSwitch === true ? (
                 <ProfileModalBox>
-                  <div className="miniProfileBox">
-                    <div className="miniProfileImageBox">
-                      <img src={myProfileURL} alt="miniMyProfile" />
+                  <div className='miniProfileBox'>
+                    <div className='miniProfileImageBox'>
+                      <img src={myProfileURL} alt='miniMyProfile' />
                     </div>
-                    <div className="profileInfo">
-                      <div className="profileName">{myProfileName}</div>
-                      <NavLink className="myPage" to={"/MyPage"}>
-                        {"마이페이지 >"}
+                    <div className='profileInfo'>
+                      <div className='profileName'>{myProfileName}</div>
+                      <NavLink className='myPage' to={'/MyPage'}>
+                        {'마이페이지 >'}
                       </NavLink>
                     </div>
                   </div>
                   <div
-                    className="logOutBox"
+                    className='logOutBox'
                     onClick={() => {
                       setLoginStatueSwitch(!loginStatueSwitch);
                       setHandleModalSwitch(false);
-                    }}
-                  >
+                    }}>
                     로그아웃
                   </div>
                 </ProfileModalBox>
@@ -86,7 +82,7 @@ const Nav = () => {
           <NavRightBox>
             <MenuBox>
               <MenuList>크리에이터 지원</MenuList>
-              <NavLink to={"/login"}>
+              <NavLink to={'/login'}>
                 <MenuList>
                   {/* onClick={() => setLoginStatueSwitch(!loginStatueSwitch)} */}
                   로그인

@@ -1,10 +1,9 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { css } from "styled-components";
-import { withRouter } from "react-router-dom";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { css } from 'styled-components';
+import { withRouter } from 'react-router-dom';
 
 class VideoCardList extends Component {
-<<<<<<< HEAD
   goToClassPage = (item) => {
     this.props.history.push(`/ClassLists/${item.classId}`);
     // console.log(item);
@@ -35,36 +34,6 @@ class VideoCardList extends Component {
                 </div>
                 <div className='barContainer'>
                   <progress className='progressTag' value='20' max='100' />
-=======
-  goToClassPage = () => {
-    this.props.history.push("/ClassLists");
-  };
-
-  render() {
-    const { mypage } = this.props;
-    return (
-      <>
-        <VideoContainer>
-          {mypage.my_class?.map((item, idx) => (
-            <VideoCard key={idx}>
-              <div className="videoBox">
-                <img src={item.thumbnail} alt="섬네일" />
-                <img
-                  className="playButton"
-                  src="/images/HS/playbutton.png"
-                  alt="playbutton"
-                  onClick={this.goToClassPage}
-                />
-              </div>
-              <div className="title">{item.title}</div>
-              <div className="progressBox">
-                <div className="progress">
-                  {item.progress}% 수강중
-                  <span>89일 남음</span>
-                </div>
-                <div className="barContainer">
-                  <progress className="progressTag" value={item.progress} max="100" />
->>>>>>> f75d934... [ADD] 멘토님 리뷰 반영
                 </div>
               </div>
             </VideoCard>

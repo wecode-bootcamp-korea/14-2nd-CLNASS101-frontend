@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { css } from "styled-components";
-import { RiCoupon2Line } from "react-icons/ri";
-import { AiOutlineHeart } from "react-icons/ai";
-import { RiShoppingBasket2Line } from "react-icons/ri";
-import { RiKakaoTalkFill } from "react-icons/ri";
-import HistoryCardList from "./HistoryCardList";
-import CreateClassList from "./CreateClassList";
-import VideoCardList from "./VideoCardList";
-import Nav from "../../Components/Nav/Nav";
-import { withRouter } from "react-router-dom";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { css } from 'styled-components';
+import { RiCoupon2Line } from 'react-icons/ri';
+import { AiOutlineHeart } from 'react-icons/ai';
+import { RiShoppingBasket2Line } from 'react-icons/ri';
+import { RiKakaoTalkFill } from 'react-icons/ri';
+import HistoryCardList from './HistoryCardList';
+import CreateClassList from './CreateClassList';
+import VideoCardList from './VideoCardList';
+import Nav from '../../Components/Nav/Nav';
+import { withRouter } from 'react-router-dom';
 
 class MyPage extends Component {
   constructor() {
@@ -23,10 +23,10 @@ class MyPage extends Component {
   }
 
   componentDidMount = () => {
-    fetch("http://192.168.200.110:8000/user/my-page", {
-      method: "GET",
+    fetch('http://192.168.200.110:8000/user/my-page', {
+      method: 'GET',
       headers: {
-        Authorization: localStorage.getItem("token"),
+        Authorization: localStorage.getItem('token'),
       },
     })
       .then((res) => res.json())
@@ -52,7 +52,7 @@ class MyPage extends Component {
             <LeftSide>
               <ProfileCard>
                 <Profile>
-                  <img src="/images/HS/profile.png" alt="프로필이미지" />
+                  <img src='/images/HS/profile.png' alt='프로필이미지' />
                 </Profile>
                 <UserInfo>
                   <UserName>{mypage?.name}</UserName>
@@ -60,27 +60,27 @@ class MyPage extends Component {
                 </UserInfo>
                 <UserEmail>{mypage?.email}</UserEmail>
                 <PointImg>
-                  <img src="/images/HS/point.png" alt="coupon" />
+                  <img src='/images/HS/point.png' alt='coupon' />
                 </PointImg>
                 <Icons>
                   <IconBox>
-                    <RiCoupon2Line size="28" />
+                    <RiCoupon2Line size='28' />
                     <TextBox>{mypage?.couponNum}개</TextBox>
                   </IconBox>
                   <IconBox>
-                    <AiOutlineHeart size="28" />
+                    <AiOutlineHeart size='28' />
                     <TextBox>{mypage?.likeNum}개</TextBox>
                   </IconBox>
                   <IconBox>
-                    <RiShoppingBasket2Line size="28" />
+                    <RiShoppingBasket2Line size='28' />
                     <TextBox>주문 내역 {mypage?.orderNum}개</TextBox>
                   </IconBox>
                 </Icons>
               </ProfileCard>
               <Images>
                 <div>
-                  <img src="/images/HS/collectCoupon.png" alt="coupon" />
-                  <img src="/images/HS/membership.png" alt="collectCoupon" />
+                  <img src='/images/HS/collectCoupon.png' alt='coupon' />
+                  <img src='/images/HS/membership.png' alt='collectCoupon' />
                 </div>
               </Images>
             </LeftSide>
