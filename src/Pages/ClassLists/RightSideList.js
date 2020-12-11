@@ -14,9 +14,8 @@ class RightSideList extends Component {
   };
 
   render() {
-    console.log(this.props.curriculum.lectures[0].lecture_title);
+    // console.log(this.props.curriculum.lectures[0].lecture_title);
     const { curriculum } = this.props;
-    // console.log('isplayed:', curriculum.isplayed);
     return (
       <div className='chapterContainer'>
         <div className='chapter'>

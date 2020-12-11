@@ -31,6 +31,7 @@ class MyPage extends Component {
     })
       .then((res) => res.json())
       .then((res) => {
+        console.log(res);
         this.setState({
           mypage: res.PROFILE,
           myProduct: res.OWN_PRODUCT,
