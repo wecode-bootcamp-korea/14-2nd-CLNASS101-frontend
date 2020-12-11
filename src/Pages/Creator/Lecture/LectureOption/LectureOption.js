@@ -94,7 +94,11 @@ const LectureOption = (props) => {
         </UploadImageBox>
         <InputChapterBox>
           <p>
+<<<<<<< HEAD
             챕터명 <span>( ex : 양식 만들기 )</span>
+=======
+            챕터명 <span>( ex : 개발자에 대한 이해 )</span>
+>>>>>>> master
           </p>
           <InputChapterTitle
             onChange={(e) => onChangeChapterTitle(e)}></InputChapterTitle>
@@ -102,7 +106,11 @@ const LectureOption = (props) => {
             {LectureList.map((_, lectureIndex) => (
               <InputLectureBox>
                 <p>
+<<<<<<< HEAD
                   강의명 <span>( ex : 스페니쉬 오믈렛 만드는 방법 )</span>
+=======
+                  강의명 <span>( ex : 프론트엔드 & 백엔드 개발자 차이점 )</span>
+>>>>>>> master
                 </p>
                 <InputLectureTitle
                   onChange={(e) =>

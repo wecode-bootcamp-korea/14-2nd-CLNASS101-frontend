@@ -1,0 +1,29 @@
+{
+  "class_detail": {
+    "class_title": "낭만적인 캠핑을 위한 아메리칸 바비큐 레시피",
+    "lecture_title": "3번",
+    "lecture_purpose": "본갈비살 손질법을 배워보겠습니다.",
+    "lecture_url": "/images/HS/해수.mp4",
+    "lecture_detail": [
+      {
+        "id": "0",
+        "detail_des": "본갈비살 부위 설명",
+        "image_url": "/images/HS/1.png",
+        "set_time": "1:05"
+      },
+      {
+        "id": "1",
+        "detail_des": "윗 부분의 지방과 근막을 제거합니다.",
+        "image_url": "/images/HS/2.png",
+        "set_time": "2:03"
+      },
+      {
+        "id": "2",
+        "detail_des": "남은 지방과 근막은 육수용으로~",
+        "image_url": "/images/HS/3.png",
+        "set_time": "5:08"
+      }
+    ],
+    "lecture_preview": "손질한 본갈비살을 그릴에서 구워보겠읍니다..."
+  }
+}

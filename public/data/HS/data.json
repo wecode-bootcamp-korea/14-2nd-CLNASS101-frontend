@@ -23,6 +23,54 @@
         "thumbnail": "/images/HS/thumbnail.webp",
         "progress": "30"
       }
+    ],
+    "history_class": [
+      {
+        "id": "1",
+        "title": "낭만적인 캠핑을 위한 아메리칸 바비큐 레시피",
+        "thumbnail": "/images/HS/thumbnail.webp",
+        "progress": "50",
+        "price": 100000,
+        "discountPer": 30
+      },
+      {
+        "id": "2",
+        "title": "낭만적인 캠핑을 위한 아메리칸 바비큐 레시피",
+        "thumbnail": "/images/HS/thumbnail.webp",
+        "progress": "20",
+        "price": 20999,
+        "discountPer": 30
+      },
+      {
+        "id": "3",
+        "title": "낭만적인 캠핑을 위한 아메리칸 바비큐 레시피",
+        "thumbnail": "/images/HS/thumbnail.webp",
+        "progress": "80",
+        "price": 83838,
+        "discountPer": 30
+      }
+    ],
+    "create_class": [
+      {
+        "id": "1",
+        "title": "abdxs",
+        "thumbnail": "/images/HS/thumbnail.webp",
+        "progress": "10",
+        "price": 83838,
+        "discountPer": 30
+      },
+      {
+        "id": "2",
+        "title": "createCard",
+        "thumbnail": "/images/HS/thumbnail.webp",
+        "progress": "20"
+      },
+      {
+        "id": "3",
+        "title": "createCard",
+        "thumbnail": "/images/HS/thumbnail.webp",
+        "progress": "30"
+      }
     ]
   }
 }

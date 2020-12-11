@@ -1,0 +1,147 @@
+{
+  "NavContents" : [
+    {
+      "id": 0,
+      "content": "전체"
+    },
+    {
+      "id": 1,
+      "content": "크리에이티브"
+    },
+    {
+      "id": 2,
+      "content": "머니"
+    },
+    {
+      "id": 3,
+      "content": "커리어"
+    },
+    {
+      "id": 4,
+      "content": "키즈"
+    },
+    {
+      "id": 5,
+      "content": "시그니처"
+    },
+    {
+      "id": 6,
+      "content": "리브레"
+    }
+  ],
+
+  "CategoryItems" : [
+    {
+      "id":0 ,
+      "CategoryItem":"얼리버드" 
+    },
+    {
+      "id":1 ,
+      "CategoryItem":"오픈예정" 
+    },
+    {
+      "id":2 ,
+      "CategoryItem":"바로수강" 
+    },
+    {
+      "id":3 ,
+      "CategoryItem":"미술" 
+    },
+    {
+      "id":4 ,
+      "CategoryItem":"공예" 
+    },
+    {
+      "id":5 ,
+      "CategoryItem":"디지털 드로잉" 
+    }
+  ],
+  "ListDetail" : [
+    {
+      "id": 0,
+      "imageUrl":"https://res.heraldm.com/phpwas/restmb_idxmake.php?idx=507&simg=/content/image/2018/08/03/20180803000757_0.jpg",
+      "category": "요리/음료 코우지",
+      "title": "미슐랭3스타 '칸다' 출신 '코우지 셰프'에게 배우는 스시 오마카세",
+      "likes": 2319,
+      "Price": 300000,
+      "discountPer": 28,
+      "present": "선물하기",
+      "attendTerm": "바로 수강가능",
+      "availableTerm": "1.21(목)부터 수강 가능" 
+    },
+    {
+      "id": 1,
+      "imageUrl":"https://t1.daumcdn.net/cfile/tistory/2330FE4D549A708C2A",
+      "category": "공예 LQOOP",
+      "title": "지친 하루를 다정하게 감싸줄 사계절 니트 만들기",
+      "likes": 7099,
+      "Price": 410000,
+      "discountPer": 22,
+      "present": "선물하기",
+      "attendTerm": "바로 수강가능",
+      "availableTerm": "1.22(금)부터 수강 가능" 
+    },
+    {
+      "id": 2,
+      "imageUrl":"https://economychosun.com/query/upload/315/20190908035315_umqgjmyj.jpg",
+      "category": "사진/영상 이리앨",
+      "title": "예능 느낌 편집, 누구나 편집자만큼 할 수 있어요. 핫한 유튜브, 인트사, 틱톡 영상 편집법",
+      "likes": 2319,
+      "Price": 299000,
+      "discountPer": 39,
+      "present": "선물하기",
+      "attendTerm": "바로 수강가능",
+      "availableTerm": "1.24(일)부터 수강 가능"
+    },
+    {
+      "id": 3,
+      "imageUrl":"https://www.kyeonggi.com/news/photo/201403/744319_681900_2914.jpg",
+      "category": "공예 앤디스",
+      "title": "세라믹 조약돌로 쌓아가는 힐링 오브제 클래스",
+      "likes": 143,
+      "Price": 521300,
+      "discountPer": 24,
+      "present": "선물하기",
+      "attendTerm": "바로 수강가능",
+      "availableTerm": "1.26(화)부터 수강 가능"
+    }
+  ],
+  "UpdatedLists": [
+    {
+      "id": 0,
+      "imageUrl":"https://www.kyeonggi.com/news/photo/201403/744319_681900_2914.jpg",
+      "category": "공예 앤디스",
+      "title": "세라믹 조약돌로 쌓아가는 힐링 오브제 클래스",
+      "likes": 143,
+      "likesPer": 96,
+      "commentTime": 1
+    },
+    {
+      "id": 1,
+      "imageUrl":"https://www.kyeonggi.com/news/photo/201403/744319_681900_2914.jpg",
+      "category": "공예 앤디스",
+      "title": "세라믹 조약돌로 쌓아가는 힐링 오브제 클래스",
+      "likes": 143,
+      "likesPer": 96,
+      "commentTime": 1
+    },
+    {
+      "id": 2,
+      "imageUrl":"https://www.kyeonggi.com/news/photo/201403/744319_681900_2914.jpg",
+      "category": "공예 앤디스",
+      "title": "세라믹 조약돌로 쌓아가는 힐링 오브제 클래스",
+      "likes": 143,
+      "likesPer": 96,
+      "commentTime": 1
+    },
+    {
+      "id": 3,
+      "imageUrl":"https://www.kyeonggi.com/news/photo/201403/744319_681900_2914.jpg",
+      "category": "공예 앤디스",
+      "title": "세라믹 조약돌로 쌓아가는 힐링 오브제 클래스",
+      "likes": 143,
+      "likesPer": 96,
+      "commentTime": 1
+    }
+  ]
+}

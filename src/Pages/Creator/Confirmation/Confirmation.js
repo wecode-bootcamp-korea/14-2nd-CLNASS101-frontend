@@ -7,7 +7,10 @@ const Confirmation = () => {
       <ConfirmationIntroduction>
         <h1>클래스 개설 전 주의사항</h1>
         <p>
+<<<<<<< HEAD
           <RangeButton>클릭</RangeButton>
+=======
+>>>>>>> master
           <div>
             1. 강의 영상의 저작권은 없으므로 무단 배포시 운정님한테 혼납니다.
           </div>
@@ -21,7 +24,10 @@ const Confirmation = () => {
   );
 };
 
+<<<<<<< HEAD
 const RangeButton = styled.button``;
+=======
+>>>>>>> master
 const ConfirmationView = styled.form`
   margin: 80px;
   padding: 80px;

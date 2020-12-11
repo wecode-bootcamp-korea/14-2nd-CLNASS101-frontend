@@ -28,8 +28,8 @@ const CommentInput = () => {
   const getTextValue = (e) => {
     setComment(e.target.value);
   };
+
   const handleSubmit = (e) => {
-    // console.log('submit연결');
     e.preventDefault();
     addContent.push({ comment, idx: Date.now() });
     setAddContent(addContent);
@@ -52,7 +52,10 @@ const CommentInput = () => {
         />
         <div className='rightInput' type='submit'>
           <button>
-            <RiSendPlane2Line size='22' color='#e2e0e0' />
+            <RiSendPlane2Line
+              size='22'
+              color={comment.length ? '#FD7E13' : '#e2e0e0'}
+            />
           </button>
         </div>
       </CommentContainer>

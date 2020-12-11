@@ -1,82 +1,106 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { css } from 'styled-components';
-import { RiCoupon2Line } from 'react-icons/ri';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { RiShoppingBasket2Line } from 'react-icons/ri';
-import { RiKakaoTalkFill } from 'react-icons/ri';
-import VideoCardList from './VideoCardList';
-import Nav from '../../Components/Nav/Nav';
+import React, { Component } from "react";
+import styled from "styled-components";
+import { css } from "styled-components";
+import { RiCoupon2Line } from "react-icons/ri";
+import { AiOutlineHeart } from "react-icons/ai";
+import { RiShoppingBasket2Line } from "react-icons/ri";
+import { RiKakaoTalkFill } from "react-icons/ri";
+import HistoryCardList from "./HistoryCardList";
+import CreateClassList from "./CreateClassList";
+import VideoCardList from "./VideoCardList";
+import Nav from "../../Components/Nav/Nav";
+import { withRouter } from "react-router-dom";
+
 class MyPage extends Component {
   constructor() {
     super();
     this.state = {
-      mypage: {},
+      mypage: [],
+      myProduct: [],
+      recentView: [],
+      created: [],
     };
   }
 
   componentDidMount = () => {
-    fetch('http://localhost:3000/data/HS/data.json', {
-      method: 'GET',
+    fetch("http://192.168.200.110:8000/user/my-page", {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
     })
       .then((res) => res.json())
       .then((res) => {
+        console.log(res);
         this.setState({
-          mypage: res.mypage,
+          mypage: res.PROFILE,
+          myProduct: res.OWN_PRODUCT,
+          recentView: res.RECENT_VIEW,
+          created: res.CREATED,
         });
       });
   };
 
   render() {
-    const { mypage } = this.state;
+    const { mypage, myProduct, created } = this.state;
+    // console.log(this.props.match.params);
     return (
       <>
         <Nav />
         <Wrapper>
           <Container>
-            <ProfileCard>
-              <Profile>
-                <img src='/images/HS/profile.png' alt='프로필이미지' />
-              </Profile>
-              <UserInfo>
-                <UserName>{mypage?.user_name}</UserName>
-                <RiKakaoTalkFill />
-              </UserInfo>
-              <UserEmail>{mypage?.user_email}</UserEmail>
-              <PointImg>
-                <img src='/images/HS/point.png' alt='coupon' />
-              </PointImg>
-              <Icons>
-                <IconBox>
-                  <RiCoupon2Line size='28' />
-                  <TextBox>{mypage?.coupon}개</TextBox>
-                </IconBox>
-                <IconBox>
-                  <AiOutlineHeart size='28' />
-                  <TextBox>찜 0개</TextBox>
-                </IconBox>
-                <IconBox>
-                  <RiShoppingBasket2Line size='28' />
-                  <TextBox>주문 내역 {mypage?.cart_history}개</TextBox>
-                </IconBox>
-              </Icons>
-            </ProfileCard>
+            <LeftSide>
+              <ProfileCard>
+                <Profile>
+                  <img src="/images/HS/profile.png" alt="프로필이미지" />
+                </Profile>
+                <UserInfo>
+                  <UserName>{mypage?.name}</UserName>
+                  <RiKakaoTalkFill />
+                </UserInfo>
+                <UserEmail>{mypage?.email}</UserEmail>
+                <PointImg>
+                  <img src="/images/HS/point.png" alt="coupon" />
+                </PointImg>
+                <Icons>
+                  <IconBox>
+                    <RiCoupon2Line size="28" />
+                    <TextBox>{mypage?.couponNum}개</TextBox>
+                  </IconBox>
+                  <IconBox>
+                    <AiOutlineHeart size="28" />
+                    <TextBox>{mypage?.likeNum}개</TextBox>
+                  </IconBox>
+                  <IconBox>
+                    <RiShoppingBasket2Line size="28" />
+                    <TextBox>주문 내역 {mypage?.orderNum}개</TextBox>
+                  </IconBox>
+                </Icons>
+              </ProfileCard>
+              <Images>
+                <div>
+                  <img src="/images/HS/collectCoupon.png" alt="coupon" />
+                  <img src="/images/HS/membership.png" alt="collectCoupon" />
+                </div>
+              </Images>
+            </LeftSide>
 
             <RightSide>
               <Class>
                 <MyClass>내 클래스</MyClass>
                 <AllClass>내 클래스 전체보기</AllClass>
               </Class>
-              <VideoCardList mypage={this.state.mypage} />
-
+              <VideoCardList myProduct={myProduct} />
               <Class>
                 <MyClass>최근 본 클래스</MyClass>
                 <AllClass>전체보기</AllClass>
               </Class>
+              <HistoryCardList recentView={this.state.recentView} />
               <Class>
                 <MyClass>내가 등록한 클래스</MyClass>
                 <AllClass>전체보기</AllClass>
               </Class>
+              <CreateClassList created={this.state.created} />
             </RightSide>
           </Container>
         </Wrapper>
@@ -101,6 +125,10 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
+const LeftSide = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 const ProfileCard = styled.div`
   width: 362px;
   height: 360px;
@@ -110,6 +138,19 @@ const ProfileCard = styled.div`
   align-items: center;
   border-radius: 8px;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.11);
+`;
+
+const Images = styled.div`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  div {
+    width: 362px;
+
+    img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
 `;
 
 const Profile = styled.div`
