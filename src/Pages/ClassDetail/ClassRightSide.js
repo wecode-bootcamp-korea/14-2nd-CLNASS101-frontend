@@ -34,9 +34,7 @@ const ClassRightSide = (props) => {
             })}
           {/* ~여기까지 맵 돌리는 부분 */}
           <LectureObject>[다음 수업 예고]</LectureObject>
-          <LectureDes>
-            준비한 바비큐 클래스의 내용은 이번 강의까지 입니다.
-          </LectureDes>
+          <LectureDes>{props.detaildata.lecture_preview}</LectureDes>
         </div>
       </RightSide>
     </RightContainer>
@@ -96,6 +94,10 @@ const LectureDes = styled.div`
   span {
     color: #2a8fb4;
     margin-right: 8px;
+    cursor: pointer;
+    :hover {
+      text-decoration: underline;
+    }
   }
   img {
     width: 100%;

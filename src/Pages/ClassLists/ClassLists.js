@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../../Components/Nav/Nav';
 import RightSideList from './RightSideList';
 import styled from 'styled-components';
+import { withRouter } from 'react-router-dom';
 
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { BiWindows } from 'react-icons/bi';
@@ -12,28 +13,30 @@ class ClassLists extends Component {
     this.state = {
       lecture: {},
       curriculums: [],
+      lectures: [],
     };
   }
-
-  componentDidMount = () => {
-    console.log(this.props);
+  componentDidMount() {
     fetch(
-      `http://localhost:3000/data/HS/ClassListMockData${this.props.match.params.id}.json`,
+      `http://192.168.200.130:8001/products/${this.props.match.params.id}/challenge`,
       {
         method: 'GET',
+        headers: { Authorization: localStorage.getItem('token') },
       }
     )
       .then((res) => res.json())
       .then((res) => {
+        console.log(res.MESSAGE);
         this.setState({
-          lecture: res.class_data,
-          curriculums: res.class_data.curriculum,
+          lecture: res.MESSAGE,
+          curriculums: res.MESSAGE.curriculum,
+          lectures: res.MESSAGE.curriculum.lectures,
         });
       });
-  };
+  }
 
   handleButtonClick = (curriculumId) => {
-    console.log('curriculumId: ', curriculumId);
+    // console.log('curriculumId: ', curriculumId);
     const { curriculums, lecture } = this.state;
     // let count = 0;
     // for (let i = 0; i < curriculums.length; i++) {
@@ -80,12 +83,14 @@ class ClassLists extends Component {
     //   .then((result) => {
     //     if (result.message === 'success') {
     //       console.log(result.message);
+
     //     }
     //   });
     //
   };
 
   render() {
+    console.log(this.state.lectures);
     const { curriculums, lecture } = this.state;
     return (
       <>
@@ -146,14 +151,11 @@ class ClassLists extends Component {
                   </div>
                 </div>
                 <div className='videoBox'>
-                  <iframe
+                  <video
                     title='hs'
                     width='745'
                     height='419'
                     src={lecture?.video_url}
-                    frameborder='0'
-                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                    allowfullscreen
                     alt='video'
                   />
                   <img
@@ -228,8 +230,6 @@ class ClassLists extends Component {
     );
   }
 }
-
-export default ClassLists;
 
 const NavContainer = styled.div`
   width: 100%;
@@ -626,10 +626,12 @@ const RightList = styled.div`
       }
       .videoDetail {
         .detail {
+          margin-bottom: 20px;
           font-size: 14px;
           letter-spacing: -0.15px;
           line-height: 20px;
           cursor: pointer;
+          color: #1b1c1d;
           /* font-weight: 700; */
         }
         .detailBox {
@@ -688,3 +690,5 @@ const RightList = styled.div`
     }
   }
 `;
+
+export default withRouter(ClassLists);

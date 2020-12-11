@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 class VideoCardList extends Component {
   goToClassPage = () => {
-    this.props.history.push('/ClassLists');
+    this.props.history.push('/ClassLists/1');
   };
 
   render() {
