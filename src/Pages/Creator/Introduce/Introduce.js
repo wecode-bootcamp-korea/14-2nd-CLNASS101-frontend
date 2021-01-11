@@ -16,7 +16,7 @@ const Introdoce = (props) => {
   }, [files]);
 
   useEffect(() => {
-    fetch('http://192.168.200.125:8000/creator/1/first', {
+    fetch('http://192.168.0.6:8000/creator/1/first', {
       method: 'GET',
     })
       .then((res) => res.json())
@@ -329,7 +329,7 @@ const FirstForm = styled.form`
   justify-content: center;
   align-items: center;
   width: 32%;
-  height: 400px;
+  height: 160px;
   overflow: hidden;
   border: 1px solid rgb(200, 200, 200);
   border-radius: 10px;

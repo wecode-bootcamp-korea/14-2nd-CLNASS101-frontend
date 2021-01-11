@@ -7,11 +7,15 @@ const MakeLecture = (props) => {
   const [makeLecture, setMakeLecture] = useState([]);
 
   useEffect(() => {
-    fetch('/data/category.json', {
+    fetch('http://192.168.0.6:8000/creator/1/third', {
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
       method: 'GET',
     })
       .then((res) => res.json())
       .then((result) => {
+        console.log(result);
         setResult(result.products);
       });
   }, []);
