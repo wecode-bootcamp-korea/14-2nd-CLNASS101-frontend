@@ -48,9 +48,9 @@ Back-end <a href='https://github.com/wecode-bootcamp-korea/14-2nd-CLNASS101-back
  - [x] Layout, CSS : 네비게이션바, 로그인페이지, 크리에이터 페이지
  - [x] Fuction : 로그인시 네비게이션바 매뉴 체인지, 로그인 모달창 구현
  - [x] Fuction : 소셜(카카오)로그인 기능 구현
- - [x] Fuction : 크리에이터 상품 만들기 기능 구현, 미리보기 구현
- - [x] Fuction : 강의 구조 만들기 기능 구현, 이미지 업로드
- - [x] Fuction : 강의 만들기 기능 구현, 영상 및 이미지, 강의 설명 업로드
+ - [x] Fuction : 크리에이터 상품 만들기 기능 구현 및 실시간 미리보기 구현
+ - [x] Fuction : 강의 구조 만들기 기능 구현(이미지 업로드)
+ - [x] Fuction : 강의 만들기 기능 구현(영상 및 이미지, 강의 설명 업로드)
  - [x] Fuction : 임시 저장 기능 구현
  
  
@@ -58,9 +58,9 @@ Back-end <a href='https://github.com/wecode-bootcamp-korea/14-2nd-CLNASS101-back
 #### 완성한 미션
  - [x] Common : CRA구축, Router 초기세팅
  - [x] Layout, CSS : 메인페이지, 상품 디테일 페이지
- - [x] Fuction : 
+ - [x] Fuction : 동적 라우팅 구현
 
 ### 안혜수
 #### 완성한 미션
  - [x] Layout, CSS : 마이페이지, ClassList 페이지, ClassDetail 페이지
- - [x] Function : 
+ - [x] Function : 강의 보기 기능 구현(영상 및 이미지, 강의 설명)
