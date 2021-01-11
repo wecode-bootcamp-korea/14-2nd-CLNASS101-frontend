@@ -1,7 +1,7 @@
 # Team Name: CLNASS101
 
-[![Watch the video](https://img.youtube.com/vi//maxresdefault.jpg
-)]()
+[![Watch the video](https://img.youtube.com/vi/qU5auE2DBgo/maxresdefault.jpg
+)](https://youtu.be/qU5auE2DBgo)
 클릭해서 영상으로 이동(크리에이터 부분)
 
 # Introduction
