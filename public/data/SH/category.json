@@ -1,6 +1,6 @@
 {
   "result": {
-    "category": [
+    "categories": [
       {
         "id": 0,
         "name": "크리에이터",
@@ -35,6 +35,6 @@
         ]
       }
     ],
-    "difficulty": ["어렵다", "보통이다", "매우 쉽다"]
+    "difficulties": ["어렵다", "보통이다", "매우 쉽다"]
   }
 }
