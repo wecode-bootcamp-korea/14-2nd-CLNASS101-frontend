@@ -1,4 +1,5 @@
 # Team Name: CLNASS101
+![](https://images.velog.io/images/xedni/post/ad1f5570-6e45-49c8-8fc0-1d8650d50b5e/menu2.gif)
 
 [![Watch the video](https://img.youtube.com/vi/qU5auE2DBgo/maxresdefault.jpg
 )](https://youtu.be/qU5auE2DBgo)
