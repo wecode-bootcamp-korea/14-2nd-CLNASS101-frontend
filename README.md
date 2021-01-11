@@ -2,7 +2,7 @@
 
 [![Watch the video](https://img.youtube.com/vi//maxresdefault.jpg
 )]()
-클릭해서 영상으로 이동
+클릭해서 영상으로 이동(크리에이터 부분)
 
 # Introduction
 > 클래스101 웹사이트를 클론해보자.
