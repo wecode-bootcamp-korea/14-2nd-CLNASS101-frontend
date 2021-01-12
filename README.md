@@ -61,6 +61,16 @@ Back-end <a href='https://github.com/wecode-bootcamp-korea/14-2nd-CLNASS101-back
  - [x] Fuction : 동적 라우팅 구현
 
 ### 안혜수
+
 #### 완성한 미션
- - [x] Layout, CSS : 마이페이지, ClassList 페이지, ClassDetail 페이지
- - [x] Function : 강의 보기 기능 구현(영상 및 이미지, 강의 설명)
+- [x] Layout, CSS : 마이페이지, ClassList 페이지, ClassDetail 페이지
+#### My Page
+- [x] Function : 현재 수강중인 클래스, 최근 본 클래스, 찜한 클래스 목록을 불러오는 기능 구현
+
+#### Class List Page
+- [x] Function : 동적 routing이용, 각각의 페이지 클릭시 고유한 디테일 페이지로 이동
+- [x] Function : 영상 재생 상태를 percentage로 나타냄, 데이터를 시각화하여 progress bar에 표시해주는 기능 구현
+
+#### Class Detail Page
+- [x] Function : 댓글 기능 구현
+- [x] Function : Router 활용하여 이전페이지, 다음페이지 클릭시 각각의 페이지 이동 구현
