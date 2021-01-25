@@ -25,7 +25,7 @@ const ChapterBox = (props) => {
   const { giveChapter } = props;
   return (
     <>
-      {giveChapter.lectures.map((lectureElement) => {
+      {giveChapter.lecture.map((lectureElement) => {
         return (
           <LectureBox
             giveLecture={lectureElement}

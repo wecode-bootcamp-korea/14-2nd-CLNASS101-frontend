@@ -6,15 +6,15 @@
         "chapter_number": "",
         "chapter_title": "",
         "lecture": [
-          { "lecture_id": 0, "lecture_title": "" },
-          { "lecture_id": 0, "lecture_title": "" }
+          { "name": "재료 손질하기", "lecture_title": "" },
+          { "name": "소스 준비 하기", "lecture_title": "" }
         ]
       },
       {
         "chpter_id": 1,
         "chapter_number": "",
         "chapter_title": "",
-        "lecture": [{ "lecture_id": 0, "lecture_title": "" }]
+        "lecture": [{ "name": "오믈렛 만들기", "lecture_title": "" }]
       }
     ]
   }
