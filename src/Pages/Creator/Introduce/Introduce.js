@@ -16,13 +16,13 @@ const Introdoce = (props) => {
   }, [files]);
 
   useEffect(() => {
-    fetch('http://192.168.0.6:8000/creator/1/first', {
+    fetch('data/SH/category.json', {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((result) => {
-        setCategory(result.categories);
-        serDifficulty(result.difficulties);
+        setCategory(result.result.categories);
+        serDifficulty(result.result.difficulties);
       });
   }, []);
 
@@ -35,7 +35,7 @@ const Introdoce = (props) => {
   const getSubCategory = (e) => {
     const filterCategory = category.filter(
       (categoryElement) => categoryElement.name === e.target.value
-    )[0].subCategories;
+    )[0].subCategory;
     setSubCategory(filterCategory);
   };
 
@@ -112,8 +112,8 @@ const Introdoce = (props) => {
           </option>
           {subCategory &&
             subCategory.map((subCategoryElement, subCategoryIndex) => (
-              <option key={subCategoryIndex} value={subCategoryElement.name}>
-                {subCategoryElement.name}
+              <option key={subCategoryIndex} value={subCategoryElement}>
+                {subCategoryElement}
               </option>
             ))}
         </SelectSubCategory>
@@ -122,10 +122,10 @@ const Introdoce = (props) => {
           <option hidden selected disabled>
             어떤 수강생에게 맞는 난이도인지 선택해주세요.
           </option>
-          {difficulty &&
+          {difficulty.length &&
             difficulty.map((subCategoryElement, subCategoryIndex) => (
-              <option key={subCategoryIndex} value={subCategoryElement.name}>
-                {subCategoryElement.name}
+              <option key={subCategoryIndex} value={subCategoryElement}>
+                {subCategoryElement}
               </option>
             ))}
         </SelectDifficulty>

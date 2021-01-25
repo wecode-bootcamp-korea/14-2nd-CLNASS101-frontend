@@ -7,12 +7,11 @@ const Nav = (props) => {
   const [myProfileURL, setMyProfileURL] = useState('');
   const [myProfileName, setMyProfileName] = useState('');
   const [handleModalSwitch, setHandleModalSwitch] = useState(false);
-  const [loginStatueSwitch, setLoginStatueSwitch] = useState(false);
+  const [loginStatueSwitch, setLoginStatueSwitch] = useState(true);
 
   useEffect(() => {
-    setMyProfileURL(props.history.location.state.profileImage);
-    setMyProfileName(props.history.location.state.name);
-    setLoginStatueSwitch(!loginStatueSwitch);
+    setMyProfileURL('/images/SH/myprofile.png');
+    setMyProfileName('안상혁');
   }, []);
 
   function KakaoLogout() {

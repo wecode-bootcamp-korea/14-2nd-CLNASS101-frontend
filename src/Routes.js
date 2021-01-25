@@ -11,6 +11,7 @@ import Login from './Pages/Login/Login';
 import MyPage from './Pages/MyPage/MyPage';
 import WholeCategory from './Pages/WholeCategory/WholeCategory';
 import GlobalStyle from './Styles/GlobalStyle';
+import Nav from './Components/Nav/Nav';
 
 class Routes extends Component {
   render() {
@@ -18,7 +19,7 @@ class Routes extends Component {
       <Router>
         <GlobalStyle />
         <Switch>
-          <Route exact path='/' component={ProductLists} />
+          <Route exact path='/' component={Nav} />
           <Route exact path='/ProductDetail/:id' component={ProductDetail} />
           {/* <Route exact path='/ClassDetail/' component={ClassDetail} /> */}
           <Route exact path='/ClassDetail/:id' component={ClassDetail} />

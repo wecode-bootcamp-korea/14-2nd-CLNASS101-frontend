@@ -199,6 +199,7 @@ const Creator = () => {
               ) : null}
               {selectedPage === 2 ? (
                 <MakeLecture
+                  giveLecture={selectedLecture}
                   takeResult={(e) => setMakeLecture(e)}
                   takeImages={(images) => setLectureImage(images)}
                   takeVideos={(videos) => setLectureVideo(videos)}
@@ -300,8 +301,8 @@ const Creator = () => {
           </Viewer>
           <ChapterViewer hiddneViewer={selectedPage}>
             <ChapterBox>
-              {selectedPage === 2 && selectedLecture.length
-                ? selectedLecture.map((chapterElement) => (
+              {selectedPage === 2 && selectedLecture.chapters.length
+                ? selectedLecture.chapters.map((chapterElement) => (
                     <>
                       <ChapterTitle>{chapterElement.name}</ChapterTitle>
                       {chapterElement.lectures.map((ele) => (

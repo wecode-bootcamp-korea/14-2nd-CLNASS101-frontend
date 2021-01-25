@@ -7,7 +7,7 @@ const MakeLecture = (props) => {
   const [makeLecture, setMakeLecture] = useState([]);
 
   useEffect(() => {
-    fetch('http://192.168.0.6:8000/creator/1/third', {
+    fetch('data/SH/curriculum.json', {
       headers: {
         authorization: localStorage.getItem('token'),
       },
@@ -16,7 +16,7 @@ const MakeLecture = (props) => {
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
-        setResult(result.products);
+        setResult(result.result.chapter);
       });
   }, []);
 
